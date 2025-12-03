@@ -1,0 +1,31 @@
+{
+  "name": "hue-enhanced-addon",
+  "version": "1.0",
+  "slug": "diyhue_pair_assistant",
+  "description": "hue-enhanced-addon",
+  "arch": [
+    "armv7",
+    "armhf",
+    "aarch64",
+    "amd64"
+  ],
+  "startup": "application",
+  "boot": "auto",
+  "host_network": true,
+  "webui": "http://[HOST]:[PORT:5000]/",
+  "map": [
+    "config:rw"
+  ],
+  "options": {
+    "ha_url": "http://homeassistant:8123",
+    "ha_token": "",
+    "attempts": 60,
+    "interval": 1
+  },
+  "schema": {
+    "ha_url": "str",
+    "ha_token": "str",
+    "attempts": "int",
+    "interval": "int"
+  }
+}

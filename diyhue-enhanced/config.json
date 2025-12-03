@@ -1,0 +1,47 @@
+{
+  "name": "diyHue Enhanced",
+  "version": "2.1.0",
+  "slug": "diyhue-enhanced",
+  "description": "diyHue with enhanced security support (3-LED button press)",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "url": "https://github.com/YOUR_USERNAME/hue-enhanced-addon",
+  "startup": "application",
+  "boot": "auto",
+  "init": false,
+  "host_network": true,
+  "ports": {
+    "80/tcp": 80,
+    "443/tcp": 443,
+    "1900/udp": 1900,
+    "2100/udp": 2100,
+    "1982/udp": 1982
+  },
+  "ports_description": {
+    "80/tcp": "HTTP API",
+    "443/tcp": "HTTPS API", 
+    "1900/udp": "SSDP Discovery",
+    "2100/udp": "Entertainment Streaming",
+    "1982/udp": "Hue Sync"
+  },
+  "options": {
+    "config_path": "/config/diyhue",
+    "mac": "XX:XX:XX:XX:XX:XX",
+    "debug": false,
+    "no_serve_https": false,
+    "deconz_ip": "",
+    "button_security": true,
+    "button_timeout": 30,
+    "led_indicator": true
+  },
+  "schema": {
+    "config_path": "str",
+    "mac": "str",
+    "debug": "bool",
+    "no_serve_https": "bool", 
+    "deconz_ip": "str?",
+    "button_security": "bool",
+    "button_timeout": "int(10,120)",
+    "led_indicator": "bool"
+  },
+  "image": "ghcr.io/YOUR_USERNAME/diyhue-enhanced-{arch}"
+}
